@@ -5,7 +5,7 @@ public class MovementController : MonoBehaviour
 {
 
     // Speeds and floats 
-    private float horixontal;
+    private float horizontal;
     private float speed = 8f;
     private float jumpPower = 16f;
     private bool isFacingRight = true;
@@ -17,7 +17,7 @@ public class MovementController : MonoBehaviour
 
     private void Update()
     {
-        horixontal = Input.GetAxisRaw("Horizontal");
+        horizontal = Input.GetAxisRaw("Horizontal");
 
         if(Input.GetButtonDown("Jump") && IsGrounded())
         {
@@ -33,7 +33,7 @@ public class MovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector3(horixontal * speed, rb.linearVelocityY);
+        rb.linearVelocity = new Vector3(horizontal * speed, rb.linearVelocityY);
     }
 
     private bool IsGrounded()
@@ -42,12 +42,12 @@ public class MovementController : MonoBehaviour
     }
     private void Flip()
     {
-        if (isFacingRight && horixontal < 0f || !isFacingRight && horixontal > 0f)
+        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
             isFacingRight = !isFacingRight;
-            Vector3 localscale = transform.localScale;
-            localscale.x *= -1f;
-            transform.localScale = localscale;
+            
+
+            transform.Rotate(0, 180, 0);
         }
     }
 }
