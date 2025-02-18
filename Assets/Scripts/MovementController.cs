@@ -8,6 +8,7 @@ public class MovementController : MonoBehaviour
     private float horizontal;
     private float speed = 8f;
     private float jumpPower = 16f;
+    private float health = 100f;
     private bool isFacingRight = true;
     
     // Where we import the Player block, groundcheck for jumping, and the ground layer to know what to jump on
