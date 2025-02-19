@@ -10,7 +10,7 @@ public class Shoot : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current.qKey.wasPressedThisFrame)
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             Instantiate(bulletPrefab,shootingPoint.position,transform.rotation);
         }

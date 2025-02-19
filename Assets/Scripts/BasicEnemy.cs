@@ -5,8 +5,7 @@ public class BasicEnemy : MonoBehaviour
 {
     public float speed;
     public float health;
-    [SerializeField]
-    private GameObject redParticles;
+    public ParticleSystem redParticles;
     public AudioSource audiosource;
     public AudioClip deathSFX;
     private Rigidbody2D rb;
@@ -14,11 +13,11 @@ public class BasicEnemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        if(health <= 0)
+        redParticles.Play();
+        if (health <= 0)
         {
             audiosource.clip = deathSFX;
             audiosource.Play();
-            Instantiate(redParticles);
             Destroy(gameObject);
         }
     }
