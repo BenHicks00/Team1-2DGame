@@ -6907,7 +6907,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 347977293}
-  bulletPrefab: {fileID: 2749582693680223816, guid: 5841ec1241374d1468eb06ea41d16239, type: 3}
+  regularBulletPrefab: {fileID: 2749582693680223816, guid: 5841ec1241374d1468eb06ea41d16239, type: 3}
+  ricochetBulletPrefab: {fileID: 8567455489654820753, guid: 1a596deadba3db148b3544d9c03e0774, type: 3}
+  explosiveBulletPrefab: {fileID: 3085065864233325263, guid: f5ae69ddd4f63844c8e461e158f6909f, type: 3}
+  piercingBulletPrefab: {fileID: 534633868863627930, guid: bc03b370aa53bfc4da48a93eacb1e3a4, type: 3}
 --- !u!82 &2040615321 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 3187902677382837589, guid: 152a9571d0b09db4486d33caf1a0dd00, type: 3}
