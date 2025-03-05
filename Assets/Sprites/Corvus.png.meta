@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Corvus_0: 2977130670262405696
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
