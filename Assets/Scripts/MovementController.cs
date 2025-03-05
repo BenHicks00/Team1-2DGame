@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class MovementController : MonoBehaviour
 {
@@ -49,6 +51,22 @@ public class MovementController : MonoBehaviour
             
 
             transform.Rotate(0, 180, 0);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //This event/function handles trigger events (collsion between a game object with a rigid body)
+
+        if (other.gameObject.CompareTag("DeathBox"))
+        {
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currentSceneName);
+        }
+
+        if (other.gameObject.CompareTag("LevelOneGate"))
+        {
+            SceneManager.LoadScene(3);
         }
     }
 }
