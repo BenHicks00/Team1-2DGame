@@ -29,6 +29,6 @@ public class BasicEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector3(speed, rb.linearVelocity.y, 0);
+        //rb.linearVelocity = new Vector3(speed, rb.linearVelocity.y, 0);
     }
 }
