@@ -54,7 +54,7 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         //This event/function handles trigger events (collsion between a game object with a rigid body)
 

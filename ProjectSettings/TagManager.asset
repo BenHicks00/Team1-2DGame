@@ -4,22 +4,20 @@
 TagManager:
   serializedVersion: 3
   tags:
-<<<<<<< Updated upstream
   - DeathBox
   - LevelOneGate
-=======
   - Enemy
->>>>>>> Stashed changes
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - Ground
-  - DeathBox
-  - LevelOneGate
+  - 
+  - 
+  - 
   - 
   - 
   - 
