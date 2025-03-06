@@ -10,29 +10,32 @@ public class Player_Health : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
+        Debug.Log($"[Start] Initializing health: {currentHealth}/{maxHealth}"); // Debugging
         healthBar.SetMaxHealth(maxHealth);
     }
 
     public void TakeDamage(int damage)
-{
-    currentHealth -= damage;
-    if (currentHealth < 0) currentHealth = 0;
-
-    Debug.Log($"Player took damage! Current Health: {currentHealth}"); // Debugging
-
-    healthBar.SetHealth(currentHealth); // Update the health bar
-
-    if (currentHealth == 0)
     {
-        Die();
-    }
-}
+        Debug.Log($"[TakeDamage] Before: {currentHealth}/{maxHealth}");
+        currentHealth -= damage;
+        if (currentHealth < 0) currentHealth = 0;
+        Debug.Log($"[TakeDamage] After: {currentHealth}/{maxHealth}");
 
+        healthBar.SetHealth(currentHealth); // Update the health bar
+
+        if (currentHealth == 0)
+        {
+            Die();
+        }
+    }
 
     public void Heal(int amount)
     {
+        Debug.Log($"[Heal] Before: {currentHealth}/{maxHealth}");
         currentHealth += amount;
         if (currentHealth > maxHealth) currentHealth = maxHealth;
+        Debug.Log($"[Heal] After: {currentHealth}/{maxHealth}");
+
         healthBar.SetHealth(currentHealth);
     }
 

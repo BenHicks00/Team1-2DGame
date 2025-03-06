@@ -21,9 +21,20 @@ public class MovementController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+
+
+    private void Start()
+    {
+     hp.SetMaxHealth(100);
+     hp.SetHealth(Health);
+    }
     private void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+
+
+
+
 
         if(Input.GetButtonDown("Jump") && IsGrounded())
         {
