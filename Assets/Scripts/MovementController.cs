@@ -12,7 +12,10 @@ public class MovementController : MonoBehaviour
     private float jumpPower = 16f;
     private float health = 100f;
     private bool isFacingRight = true;
-    
+
+    public Healthbar hp;
+    private int Health;
+
     // Where we import the Player block, groundcheck for jumping, and the ground layer to know what to jump on
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -31,6 +34,7 @@ public class MovementController : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
         }
 
+        hp.SetHealth(Health);
         Flip();
     }
 
@@ -66,6 +70,10 @@ public class MovementController : MonoBehaviour
         if (other.gameObject.CompareTag("LevelOneGate"))
         {
             SceneManager.LoadScene(5);
+        }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Health = Health - 10;  
         }
     }
 }
