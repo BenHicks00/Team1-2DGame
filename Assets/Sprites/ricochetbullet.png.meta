@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ricochetbullet_0: -5037728458558833280
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

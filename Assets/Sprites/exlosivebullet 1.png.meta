@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      exlosivebullet 1_0: 9188666471025008864
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

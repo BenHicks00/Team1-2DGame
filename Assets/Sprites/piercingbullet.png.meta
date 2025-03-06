@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      piercingbullet_0: 4014526457046451911
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
