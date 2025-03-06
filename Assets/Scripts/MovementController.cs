@@ -40,6 +40,10 @@ public class MovementController : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
         }
+        if(Health <= 0)
+        {
+            SceneManager.LoadScene(4);
+        }
 
         hp.SetHealth(Health);
         Flip();
