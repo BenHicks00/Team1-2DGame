@@ -4,7 +4,7 @@ public class BasicEnemy : MonoBehaviour
 {
     public float speed;
     public float health;
-    public int damageToPlayer = 10; // Damage dealt to player on contact
+    public int damageToPlayer; // Damage dealt to player on contact
     public ParticleSystem redParticles;
     public AudioSource audiosource;
     public AudioClip deathSFX;
