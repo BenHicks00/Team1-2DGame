@@ -14,7 +14,7 @@ public class MovementController : MonoBehaviour
     private bool isFacingRight = true;
 
     public Healthbar hp;
-    private int Health;
+    private int Health = 100;
 
     // Where we import the Player block, groundcheck for jumping, and the ground layer to know what to jump on
     [SerializeField] private Rigidbody2D rb;
@@ -23,11 +23,7 @@ public class MovementController : MonoBehaviour
 
 
 
-    private void Start()
-    {
-     hp.SetMaxHealth(100);
-     hp.SetHealth(Health);
-    }
+  
     private void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
