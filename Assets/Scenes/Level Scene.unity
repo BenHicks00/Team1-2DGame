@@ -54306,6 +54306,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7586814513900063974, guid: 7e13d1b072e6dea4697cad117003be00, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8242736249949844077, guid: 7e13d1b072e6dea4697cad117003be00, type: 3}
       propertyPath: speed
       value: 5
@@ -54320,11 +54324,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9092297911071094538, guid: 7e13d1b072e6dea4697cad117003be00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.77
+      value: 20.85
       objectReference: {fileID: 0}
     - target: {fileID: 9092297911071094538, guid: 7e13d1b072e6dea4697cad117003be00, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.78
+      value: -6.1
       objectReference: {fileID: 0}
     - target: {fileID: 9092297911071094538, guid: 7e13d1b072e6dea4697cad117003be00, type: 3}
       propertyPath: m_LocalPosition.z
