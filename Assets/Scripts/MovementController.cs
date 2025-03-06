@@ -60,13 +60,12 @@ public class MovementController : MonoBehaviour
 
         if (other.gameObject.CompareTag("DeathBox"))
         {
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentSceneName);
+            SceneManager.LoadScene(4);
         }
 
         if (other.gameObject.CompareTag("LevelOneGate"))
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(5);
         }
     }
 }
