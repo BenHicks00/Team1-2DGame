@@ -8,10 +8,11 @@ public class MovementController : MonoBehaviour
 
     // Speeds and floats 
     private float horizontal;
-    private float speed = 8f;
+    private float speed = 3f;
     private float jumpPower = 16f;
     private float health = 100f;
     private bool isFacingRight = true;
+  
 
     public Healthbar hp;
     private int Health = 100;
@@ -21,13 +22,17 @@ public class MovementController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    //Animator for sprites
+    public Animator animator;  
+
 
 
   
     private void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
+        horizontal = Input.GetAxisRaw("Horizontal") *speed;
 
+        animator.SetFloat("speed" , Mathf.Abs(horizontal));
 
 
 
