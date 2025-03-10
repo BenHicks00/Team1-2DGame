@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      corvus_jumpshoot_0: 9119923335693108276
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      corvus_jumpidle_0: 6528407111833639763
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
