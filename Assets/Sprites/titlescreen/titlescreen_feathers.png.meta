@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      titlescreen_feathers_0: -2347517440861886475
+      titlescreen_feathers_1: -582706667766446299
+      titlescreen_feathers_2: -1185367066486136329
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

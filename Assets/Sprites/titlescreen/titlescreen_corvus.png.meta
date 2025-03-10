@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      titlescreen_corvus_0: -8209757900121893589
+      titlescreen_corvus_1: -4363278980287733654
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
