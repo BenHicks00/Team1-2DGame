@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BasicEnemy : MonoBehaviour
+public class TexEnemy : MonoBehaviour
 {
     public float speed;
     public float health;
@@ -11,12 +11,12 @@ public class BasicEnemy : MonoBehaviour
     public AudioClip damageSFX;
     public AudioClip bossFightMusic; // Music to play during animation
     private Rigidbody2D rb;
-    //private Animator animator;
+    private Animator animator;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //animator = GetComponent<Animator>(); // Get the Animator
+        animator = GetComponent<Animator>(); // Get the Animator
     }
 
     public void TakeDamage(float damage)
@@ -66,6 +66,23 @@ public class BasicEnemy : MonoBehaviour
     // NEW: Play continuous audio when the "Tex Boss fight1" animation is triggered
     private void Update()
     {
-       
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Tex Boss fight1"))
+        {
+            if (!audiosource.isPlaying) // Prevent restarting the audio each frame
+            {
+                audiosource.clip = bossFightMusic;
+                audiosource.loop = true; // Ensure the sound loops
+                audiosource.Play();
+                Debug.Log("Boss fight music started!");
+            }
+        }
+        else
+        {
+            if (audiosource.clip == bossFightMusic) // Stop only if it's playing the boss music
+            {
+                audiosource.Stop();
+                Debug.Log("Boss fight music stopped!");
+            }
+        }
     }
 }
