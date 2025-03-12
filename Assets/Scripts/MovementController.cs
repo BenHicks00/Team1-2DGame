@@ -27,6 +27,8 @@ public class MovementController : MonoBehaviour
 
     public Animator BossAnimator;
 
+    public CameraController cameraController;
+
 
 
     private void Update()
@@ -99,8 +101,9 @@ public class MovementController : MonoBehaviour
             //LOCK CAMERA TO ARENA
             //PLAY BOSS ANIMATION
             //CLOSE DOOR BEHIND PLAYER
-
+            cameraController.LockCamera(new Vector3(110, 30, -10));
             BossAnimator.SetTrigger("BossTrigger");
+            
         }
     }
 }
