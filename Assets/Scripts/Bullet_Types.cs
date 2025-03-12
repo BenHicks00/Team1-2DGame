@@ -43,6 +43,7 @@ public class Bullet_Types : MonoBehaviour
                 }
 
             }
+        }
 
             if (collision.CompareTag("Enemy"))
             {
@@ -101,4 +102,5 @@ public class Bullet_Types : MonoBehaviour
             }
         }
     }
-}
+
+
