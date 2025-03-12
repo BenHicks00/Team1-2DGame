@@ -31,60 +31,74 @@ public class Bullet_Types : MonoBehaviour
     {
         if (collision.CompareTag("Player")) return; // Ignore player
 
-        if (collision.CompareTag("Enemy"))
+
+        if (collision.CompareTag("BreakWall"))
         {
-            BasicEnemy enemy = collision.GetComponent<BasicEnemy>();
-            if (enemy != null)
+            BreakWall wall = collision.GetComponent<BreakWall>();
+            if (wall != null)
             {
                 if (bulletType == BulletType.Piercing || bulletType == BulletType.Explosive)
                 {
-                    enemy.TakeDamage(9999); // One-hit kill for piercing and explosive bullets
+                    wall.TakeDamage(9999); // One-hit kill for piercing and explosive bullets
+                }
+
+            }
+
+            if (collision.CompareTag("Enemy"))
+            {
+                BasicEnemy enemy = collision.GetComponent<BasicEnemy>();
+                if (enemy != null)
+                {
+                    if (bulletType == BulletType.Piercing || bulletType == BulletType.Explosive)
+                    {
+                        enemy.TakeDamage(9999); // One-hit kill for piercing and explosive bullets
+                    }
+                    else
+                    {
+                        enemy.TakeDamage(20); // Normal damage for regular and ricochet bullets
+                    }
+                }
+
+                Debug.Log($"Bullet {bulletType} hit an enemy!");
+
+                if (bulletType == BulletType.Explosive)
+                {
+                    Destroy(gameObject); // Explosive bullets destroy on impact
+                }
+                else if (bulletType == BulletType.Piercing)
+                {
+                    pierceCount++;
+                    if (pierceCount >= maxPierces)
+                    {
+                        Debug.Log("Piercing bullet reached max pierces and is destroyed.");
+                        Destroy(gameObject);
+                    }
                 }
                 else
                 {
-                    enemy.TakeDamage(20); // Normal damage for regular and ricochet bullets
+                    Destroy(gameObject); // Regular and ricochet bullets destroy on impact
                 }
             }
-
-            Debug.Log($"Bullet {bulletType} hit an enemy!");
-            
-            if (bulletType == BulletType.Explosive)
+            else if (collision.gameObject.CompareTag("Ground"))
             {
-                Destroy(gameObject); // Explosive bullets destroy on impact
-            }
-            else if (bulletType == BulletType.Piercing)
-            {
-                pierceCount++;
-                if (pierceCount >= maxPierces)
+                if (bulletType == BulletType.Ricochet && ricochetCount < maxRicochets)
                 {
-                    Debug.Log("Piercing bullet reached max pierces and is destroyed.");
+                    ricochetCount++;
+                    Vector2 normal = collision.GetComponent<Collider2D>().ClosestPoint(transform.position) - (Vector2)transform.position;
+                    rb.linearVelocity = Vector2.Reflect(rb.linearVelocity, normal.normalized);
+                    Debug.Log($"Ricochet! Remaining bounces: {maxRicochets - ricochetCount}");
+                }
+                else
+                {
+                    Debug.Log($"Ricochet bullet exceeded max bounces and is destroyed.");
                     Destroy(gameObject);
                 }
             }
             else
             {
-                Destroy(gameObject); // Regular and ricochet bullets destroy on impact
-            }
-        }
-        else if (collision.gameObject.CompareTag("Ground"))
-        {
-            if (bulletType == BulletType.Ricochet && ricochetCount < maxRicochets)
-            {
-                ricochetCount++;
-                Vector2 normal = collision.GetComponent<Collider2D>().ClosestPoint(transform.position) - (Vector2)transform.position;
-                rb.linearVelocity = Vector2.Reflect(rb.linearVelocity, normal.normalized);
-                Debug.Log($"Ricochet! Remaining bounces: {maxRicochets - ricochetCount}");
-            }
-            else
-            {
-                Debug.Log($"Ricochet bullet exceeded max bounces and is destroyed.");
+                Debug.Log($"Bullet {bulletType} hit a non-enemy and is destroyed.");
                 Destroy(gameObject);
             }
-        }
-        else
-        {
-            Debug.Log($"Bullet {bulletType} hit a non-enemy and is destroyed.");
-            Destroy(gameObject);
         }
     }
 }
