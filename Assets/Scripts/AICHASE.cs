@@ -1,6 +1,5 @@
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
-using static UnityEngine.RuleTile.TilingRuleOutput;
+
 
 public class AICHASE : MonoBehaviour
 {
