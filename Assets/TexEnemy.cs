@@ -13,6 +13,8 @@ public class TexEnemy : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
 
+    public LevelLoader levelloader;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,7 +35,9 @@ public class TexEnemy : MonoBehaviour
         {
             audiosource.clip = deathSFX;
             audiosource.Play();
-            Destroy(gameObject);
+
+            levelloader.LoadWinScene();
+            //Destroy(gameObject);
         }
     }
 
