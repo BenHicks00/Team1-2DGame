@@ -16,29 +16,24 @@ public class Bullet_Types : MonoBehaviour
     private int pierceCount = 0;
     private int maxPierces = 3;
     private int ricochetCount = 0;
-    private int maxRicochets = 3; // Set how many times the bullet can bounce
+    private int maxRicochets = 3; // Maximum bounces before destruction
+    public float lifetime = 5f; // Bullet lifetime before automatic destruction
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.linearVelocity = transform.right * speed;
         Debug.Log($"Bullet spawned with type: {bulletType}");
+        Destroy(gameObject, lifetime); // Destroy bullet after set time
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"Bullet {bulletType} collided with: {collision.gameObject.name}");
+        if (collision.CompareTag("Player")) return; // Ignore player
 
-        if ((collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Ground")) && bulletType == BulletType.Ricochet)
-
+        if (collision.CompareTag("Enemy"))
         {
-            HandleRicochet(collision);
-            return;
-        }
-
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            BasicEnemy enemy = collision.gameObject.GetComponent<BasicEnemy>();
+            BasicEnemy enemy = collision.GetComponent<BasicEnemy>();
             if (enemy != null)
             {
                 if (bulletType == BulletType.Piercing || bulletType == BulletType.Explosive)
@@ -52,7 +47,7 @@ public class Bullet_Types : MonoBehaviour
             }
 
             Debug.Log($"Bullet {bulletType} hit an enemy!");
-
+            
             if (bulletType == BulletType.Explosive)
             {
                 Destroy(gameObject); // Explosive bullets destroy on impact
@@ -68,28 +63,28 @@ public class Bullet_Types : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject); // Regular and Ricochet bullets destroy on impact unless bouncing
+                Destroy(gameObject); // Regular and ricochet bullets destroy on impact
             }
         }
-        else if (!collision.gameObject.CompareTag("Enemy") && bulletType != BulletType.Piercing)
+        else if (collision.gameObject.CompareTag("Ground"))
+        {
+            if (bulletType == BulletType.Ricochet && ricochetCount < maxRicochets)
+            {
+                ricochetCount++;
+                Vector2 normal = collision.GetComponent<Collider2D>().ClosestPoint(transform.position) - (Vector2)transform.position;
+                rb.linearVelocity = Vector2.Reflect(rb.linearVelocity, normal.normalized);
+                Debug.Log($"Ricochet! Remaining bounces: {maxRicochets - ricochetCount}");
+            }
+            else
+            {
+                Debug.Log($"Ricochet bullet exceeded max bounces and is destroyed.");
+                Destroy(gameObject);
+            }
+        }
+        else
         {
             Debug.Log($"Bullet {bulletType} hit a non-enemy and is destroyed.");
             Destroy(gameObject);
         }
-    }
-
-    private void HandleRicochet(Collision2D collision)
-    {
-        if (ricochetCount >= maxRicochets)
-        {
-            Debug.Log("Ricochet bullet exceeded max bounces and is destroyed.");
-            Destroy(gameObject);
-            return;
-        }
-
-        ricochetCount++;
-        Vector2 normal = collision.contacts[0].normal; // Get the surface normal
-        rb.linearVelocity = Vector2.Reflect(rb.linearVelocity, normal); // Reflect the velocity
-        Debug.Log($"Ricochet! Remaining bounces: {maxRicochets - ricochetCount}");
     }
 }
