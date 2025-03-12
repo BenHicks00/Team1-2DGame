@@ -84,7 +84,7 @@ public class Bullet_Types : MonoBehaviour
                 if (bulletType == BulletType.Ricochet && ricochetCount < maxRicochets)
                 {
                     ricochetCount++;
-                    Vector2 normal = collision.GetComponent<Collider2D>().ClosestPoint(transform.position) - (Vector2)transform.position;
+                    Vector2 normal = (Vector2)transform.position - collision.ClosestPoint(transform.position);
                     rb.linearVelocity = Vector2.Reflect(rb.linearVelocity, normal.normalized);
                     Debug.Log($"Ricochet! Remaining bounces: {maxRicochets - ricochetCount}");
                 }
