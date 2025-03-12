@@ -23,11 +23,12 @@ public class MovementController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     //Animator for sprites
-    public Animator animator;  
+    public Animator animator;
+
+    public Animator BossAnimator;
 
 
 
-  
     private void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal") *speed;
@@ -89,7 +90,17 @@ public class MovementController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Health = Health - 10;  
+            Health = Health - 10;
+        }
+        if (other.gameObject.CompareTag("BossTrigger"))
+        {
+            //PLAY ANIMATION/VIDEO
+
+            //LOCK CAMERA TO ARENA
+            //PLAY BOSS ANIMATION
+            //CLOSE DOOR BEHIND PLAYER
+
+            BossAnimator.SetTrigger("BossTrigger");
         }
     }
 }
