@@ -8,12 +8,20 @@ public class BasicEnemy : MonoBehaviour
     public ParticleSystem redParticles;
     public AudioSource audiosource;
     public AudioClip deathSFX;
+    public AudioClip damageSFX; // Sound effect when hit
     private Rigidbody2D rb;
 
     public void TakeDamage(float damage)
     {
         health -= damage;
         redParticles.Play();
+
+        // Play damage sound effect when hit
+        if (audiosource != null && damageSFX != null)
+        {
+            audiosource.PlayOneShot(damageSFX);
+        }
+
         if (health <= 0)
         {
             audiosource.clip = deathSFX;
