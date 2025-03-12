@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4536517576231501796, guid: 120304c8f2da58b41b63dea63f050ea0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.08
+      value: 149.62363
       objectReference: {fileID: 0}
     - target: {fileID: 4536517576231501796, guid: 120304c8f2da58b41b63dea63f050ea0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.04
+      value: 6.2055655
       objectReference: {fileID: 0}
     - target: {fileID: 4536517576231501796, guid: 120304c8f2da58b41b63dea63f050ea0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: health
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 6032377989796305921, guid: 120304c8f2da58b41b63dea63f050ea0, type: 3}
+      propertyPath: deathSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 5447652dd1b2f2e4fad460fd23212788, type: 3}
     - target: {fileID: 6032377989796305921, guid: 120304c8f2da58b41b63dea63f050ea0, type: 3}
       propertyPath: damageToPlayer
       value: 10
