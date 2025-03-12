@@ -18268,8 +18268,8 @@ Transform:
   m_GameObject: {fileID: 473979738}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5772161, y: 0.40843803, z: -0.40843806, w: 0.5772161}
-  m_LocalPosition: {x: 0.06, y: 0.214, z: 0.15}
-  m_LocalScale: {x: 1.1393483, y: 3.3894985, z: 2.052332}
+  m_LocalPosition: {x: -0.77, y: -0.28, z: 0.2}
+  m_LocalScale: {x: 0.5250459, y: 1.5619826, z: 0.9457761}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1420409596}
@@ -19352,7 +19352,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.32}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -19362,7 +19362,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 9.43, y: 9.89}
   m_EdgeRadius: 0
 --- !u!82 &1420409598
 AudioSource:
@@ -96545,11 +96545,11 @@ PrefabInstance:
       objectReference: {fileID: 3085065864233325263, guid: f5ae69ddd4f63844c8e461e158f6909f, type: 3}
     - target: {fileID: 4975356360098377331, guid: 4ecf2c4547fe9684eba1277cbef6c1e4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 123.33
+      value: 106.5
       objectReference: {fileID: 0}
     - target: {fileID: 4975356360098377331, guid: 4ecf2c4547fe9684eba1277cbef6c1e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.16
+      value: 22.09
       objectReference: {fileID: 0}
     - target: {fileID: 4975356360098377331, guid: 4ecf2c4547fe9684eba1277cbef6c1e4, type: 3}
       propertyPath: m_LocalPosition.z
