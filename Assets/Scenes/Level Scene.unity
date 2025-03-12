@@ -63455,7 +63455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1842939421}
   - component: {fileID: 1842939420}
-  - component: {fileID: 1842939419}
+  - component: {fileID: 1842939422}
   m_Layer: 0
   m_Name: BulletSelection
   m_TagString: Untagged
@@ -63463,23 +63463,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1842939419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842939418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc202ba15022454ea402a7d824c9435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  regularBulletIcon: {fileID: 978492023}
-  ricochetBulletIcon: {fileID: 117438589}
-  explosiveBulletIcon: {fileID: 1599618053}
-  defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &1842939420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63513,6 +63496,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1842939422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842939418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc202ba15022454ea402a7d824c9435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regularBulletIcon: {fileID: 978492023}
+  ricochetBulletIcon: {fileID: 117438589}
+  explosiveBulletIcon: {fileID: 1599618053}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &1860883919
 GameObject:
   m_ObjectHideFlags: 0
@@ -63631,7 +63631,7 @@ PrefabInstance:
     - target: {fileID: 3904747430994228472, guid: 4ecf2c4547fe9684eba1277cbef6c1e4, type: 3}
       propertyPath: bulletSelectionUI
       value: 
-      objectReference: {fileID: 1842939419}
+      objectReference: {fileID: 1842939422}
     - target: {fileID: 4975356360098377331, guid: 4ecf2c4547fe9684eba1277cbef6c1e4, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.94
