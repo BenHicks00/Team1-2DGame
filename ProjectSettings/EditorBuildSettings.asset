@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelTwoScene.unity
     guid: 9aeb3e9d6ca7fcc49bc733d8d5acd4f2
+  - enabled: 1
+    path: Assets/Scenes/Intro-Cut-Scene.unity
+    guid: 192f69e716a8ea844ac55bb72511196e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
