@@ -19479,6 +19479,8 @@ MonoBehaviour:
   redParticles: {fileID: 473979739}
   audiosource: {fileID: 1420409598}
   deathSFX: {fileID: 0}
+  damageSFX: {fileID: 8300000, guid: 966ff37c08eae0948ac29aacab0b77d4, type: 3}
+  bossFightMusic: {fileID: 8300000, guid: 8c3daeece47aae54da69cb41b87408b5, type: 3}
 --- !u!1 &1465006359
 GameObject:
   m_ObjectHideFlags: 0
