@@ -8,6 +8,7 @@ TagManager:
   - LevelOneGate
   - Enemy
   - Ground
+  - BossTrigger
   layers:
   - Default
   - TransparentFX
