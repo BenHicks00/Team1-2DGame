@@ -63505,7 +63505,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1842939418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc202ba15022454ea402a7d824c9435, type: 3}
+  m_Script: {fileID: 11500000, guid: ba2f787e2278f554aa2d1c6e53da0013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   regularBulletIcon: {fileID: 978492023}
