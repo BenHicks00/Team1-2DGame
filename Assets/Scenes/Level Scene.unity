@@ -69494,6 +69494,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rat_Idle_0
       objectReference: {fileID: 0}
+    - target: {fileID: 6032377989796305921, guid: 120304c8f2da58b41b63dea63f050ea0, type: 3}
+      propertyPath: deathSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 1716b523e6fe63140a21b4add2266475, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

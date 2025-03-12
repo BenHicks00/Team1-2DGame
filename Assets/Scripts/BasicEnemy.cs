@@ -33,7 +33,10 @@ public class BasicEnemy : MonoBehaviour
         {
             audiosource.clip = deathSFX;
             audiosource.Play();
-            Destroy(gameObject);
+            Vector3 offscreenPosition = new Vector3(1000, 1000, 0);
+            transform.position = offscreenPosition;
+
+            //Destroy(gameObject);
         }
     }
 

@@ -4987,6 +4987,8 @@ MonoBehaviour:
   redParticles: {fileID: 399552554575813670}
   audiosource: {fileID: 5672688085359343606}
   deathSFX: {fileID: 0}
+  damageSFX: {fileID: 0}
+  bossFightMusic: {fileID: 0}
 --- !u!82 &5672688085359343606
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5306,7 +5308,9 @@ MonoBehaviour:
   damageToPlayer: 2
   redParticles: {fileID: 399552554575813670}
   audiosource: {fileID: 5267245005175854491}
-  deathSFX: {fileID: 0}
+  deathSFX: {fileID: 8300000, guid: 1716b523e6fe63140a21b4add2266475, type: 3}
+  damageSFX: {fileID: 0}
+  bossFightMusic: {fileID: 0}
 --- !u!82 &5267245005175854491
 AudioSource:
   m_ObjectHideFlags: 0
