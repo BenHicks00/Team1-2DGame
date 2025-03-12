@@ -785,6 +785,7 @@ MonoBehaviour:
   ricochetBulletPrefab: {fileID: 8567455489654820753, guid: 1a596deadba3db148b3544d9c03e0774, type: 3}
   explosiveBulletPrefab: {fileID: 3085065864233325263, guid: f5ae69ddd4f63844c8e461e158f6909f, type: 3}
   piercingBulletPrefab: {fileID: 534633868863627930, guid: bc03b370aa53bfc4da48a93eacb1e3a4, type: 3}
+  bulletSelectionUI: {fileID: 0}
 --- !u!114 &205524659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -802,7 +803,7 @@ MonoBehaviour:
   groundCheck: {fileID: 755188447}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   animator: {fileID: 0}
   BossAnimator: {fileID: 0}
   cameraController: {fileID: 0}

@@ -8,11 +8,10 @@ public class KnightAICHASE : MonoBehaviour
 
     private float distance;
     private bool isFacingRight = true;
-    private Animator animator; // Animator component reference
+    private Animator animator; 
 
     void Start()
     {
-        // Get the Animator component attached to the enemy
         animator = GetComponent<Animator>();
     }
 
@@ -21,22 +20,24 @@ public class KnightAICHASE : MonoBehaviour
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
 
-        // Check if the enemy is within aggro range to chase the player
-        if (distance < AggroDistance)
+        if (distance < 3)
         {
-            // Move the enemy towards the player and set the running animation
+            animator.SetBool("isRunning", false);
+
+            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+            Attack();
+        }
+        else if (distance < AggroDistance)
+        {
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
 
-            // Trigger the running animation
-            animator.SetBool("isRunning", true); // Set isRunning to true when chasing
+            animator.SetBool("isRunning", true);
         }
         else
         {
-            // Stop the running animation if the player is out of aggro range
             animator.SetBool("isRunning", false);
         }
 
-        // Flip the enemy's facing direction based on the player's position
         if (direction.x > 0 && !isFacingRight)
         {
             Flip(); // Makes enemy face right
@@ -55,9 +56,9 @@ public class KnightAICHASE : MonoBehaviour
         transform.localScale = theScale;
     }
 
-    // Example: Call this method when the enemy is supposed to attack
+    
     public void Attack()
     {
-        animator.SetTrigger("Attack"); // Trigger the "Attack" animation
+        animator.SetTrigger("attack"); 
     }
 }

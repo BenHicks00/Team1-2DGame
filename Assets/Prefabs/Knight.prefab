@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4536517576231501796, guid: 120304c8f2da58b41b63dea63f050ea0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 149.62363
+      value: 128.28
       objectReference: {fileID: 0}
     - target: {fileID: 4536517576231501796, guid: 120304c8f2da58b41b63dea63f050ea0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.2055655
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4536517576231501796, guid: 120304c8f2da58b41b63dea63f050ea0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -91,7 +91,7 @@ PrefabInstance:
     - target: {fileID: 6032377989796305921, guid: 120304c8f2da58b41b63dea63f050ea0, type: 3}
       propertyPath: deathSFX
       value: 
-      objectReference: {fileID: 8300000, guid: 5447652dd1b2f2e4fad460fd23212788, type: 3}
+      objectReference: {fileID: 8300000, guid: 9f33c65b653bbef4b83ea541bf8c9908, type: 3}
     - target: {fileID: 6032377989796305921, guid: 120304c8f2da58b41b63dea63f050ea0, type: 3}
       propertyPath: damageToPlayer
       value: 10
@@ -132,8 +132,32 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.94
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5020061257806838967, guid: 120304c8f2da58b41b63dea63f050ea0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5063767660933353586, guid: 120304c8f2da58b41b63dea63f050ea0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6475974052662587869}
   m_SourcePrefab: {fileID: 100100000, guid: 120304c8f2da58b41b63dea63f050ea0, type: 3}
+--- !u!1 &804251891125958935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5063767660933353586, guid: 120304c8f2da58b41b63dea63f050ea0, type: 3}
+  m_PrefabInstance: {fileID: 5579778582100879717}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6475974052662587869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804251891125958935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b59aa3456f6997b439d795c9983e99bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  speed: 6
+  AggroDistance: 17
