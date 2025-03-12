@@ -12,14 +12,14 @@ public class Bullet : MonoBehaviour
     private Camera mainCam;
     private Vector3 mousePos;
     
-
     void Start()
     {
-        
         audioSource = GetComponent<AudioSource>();
-
-        // rb.linearVelocity = transform.right * speed; OLD WAY THAT MOVED BULLETS 
-       
+        if (audioSource != null)
+        {
+            audioSource.Play(); // Play shooting sound when bullet is created
+        }
+        
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
@@ -27,12 +27,8 @@ public class Bullet : MonoBehaviour
         Vector3 rotation = transform.position - mousePos;
         rb.linearVelocity = new Vector2(direction.x, direction.y).normalized * force;
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rot-180);
+        transform.rotation = Quaternion.Euler(0, 0, rot - 180);
         bulletTypes = GetComponent<Bullet_Types>(); // Ensure bullet type script is attached
-
-
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,13 +39,5 @@ public class Bullet : MonoBehaviour
         {
             basicEnemy.TakeDamage(20);
         }
-
-        // Play hit sound
-        if (audioSource != null && hitSFX != null)
-        {
-            audioSource.PlayOneShot(hitSFX);
-        }
-
-        // Bullet_Types already handles destruction, so remove extra Destroy() calls here
     }
 }
