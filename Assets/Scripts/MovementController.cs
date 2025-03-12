@@ -94,6 +94,10 @@ public class MovementController : MonoBehaviour
         {
             Health = Health - 10;
         }
+        if (other.gameObject.CompareTag("Boss"))
+        {
+            Health = Health - 10;
+        }
         if (other.gameObject.CompareTag("BossTrigger"))
         {
             //PLAY ANIMATION/VIDEO

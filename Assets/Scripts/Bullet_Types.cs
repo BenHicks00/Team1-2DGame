@@ -45,6 +45,18 @@ public class Bullet_Types : MonoBehaviour
             }
         }
 
+        if (collision.CompareTag("Boss"))
+        {
+            TexEnemy tenemy = collision.GetComponent<TexEnemy>();
+            if (tenemy != null)
+            {
+
+
+                tenemy.TakeDamage(20); // Normal damage for regular and ricochet bullets
+
+            }
+        }
+
             if (collision.CompareTag("Enemy"))
             {
                 BasicEnemy enemy = collision.GetComponent<BasicEnemy>();

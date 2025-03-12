@@ -18916,9 +18916,10 @@ GameObject:
   - component: {fileID: 1420409598}
   - component: {fileID: 1420409597}
   - component: {fileID: 1420409599}
+  - component: {fileID: 1420409600}
   m_Layer: 0
   m_Name: TEX
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19172,13 +19173,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  health: 1
+  health: 500
   damageToPlayer: 25
   redParticles: {fileID: 473979739}
   audiosource: {fileID: 1420409598}
   deathSFX: {fileID: 0}
   damageSFX: {fileID: 8300000, guid: 966ff37c08eae0948ac29aacab0b77d4, type: 3}
   bossFightMusic: {fileID: 8300000, guid: 8c3daeece47aae54da69cb41b87408b5, type: 3}
+--- !u!114 &1420409600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420409593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346351fcb5ae8f34ba54f32605f9e965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  health: 25
+  damageToPlayer: 5
+  redParticles: {fileID: 0}
+  audiosource: {fileID: 0}
+  deathSFX: {fileID: 0}
+  damageSFX: {fileID: 0}
+  bossFightMusic: {fileID: 0}
 --- !u!1 &1465006359
 GameObject:
   m_ObjectHideFlags: 0
@@ -96306,11 +96327,11 @@ PrefabInstance:
       objectReference: {fileID: 3085065864233325263, guid: f5ae69ddd4f63844c8e461e158f6909f, type: 3}
     - target: {fileID: 4975356360098377331, guid: 4ecf2c4547fe9684eba1277cbef6c1e4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 118.39
+      value: 115.18
       objectReference: {fileID: 0}
     - target: {fileID: 4975356360098377331, guid: 4ecf2c4547fe9684eba1277cbef6c1e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.32
+      value: 22.46
       objectReference: {fileID: 0}
     - target: {fileID: 4975356360098377331, guid: 4ecf2c4547fe9684eba1277cbef6c1e4, type: 3}
       propertyPath: m_LocalPosition.z
