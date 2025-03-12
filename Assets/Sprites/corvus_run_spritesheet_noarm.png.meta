@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      corvus_run_spritesheet_noarm_0: -8448475847759039732
+      corvus_run_spritesheet_noarm_1: 2627254403495530517
+      corvus_run_spritesheet_noarm_2: -3058112786408372084
+      corvus_run_spritesheet_noarm_3: 6613465423302363385
+      corvus_run_spritesheet_noarm_4: 638478622520412939
+      corvus_run_spritesheet_noarm_5: 8831983641973774539
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
