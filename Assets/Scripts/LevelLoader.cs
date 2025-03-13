@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.Video; // Required for VideoPlayer
@@ -16,7 +16,7 @@ public class LevelLoader : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         // If the current scene is a cutscene, start waiting for the video to end
-        if (currentSceneIndex == 6 || currentSceneIndex == 7 || currentSceneIndex == 8)
+        if (currentSceneIndex == 6 || currentSceneIndex == 7)
         {
             StartCoroutine(WaitForVideoToEnd());
         }
@@ -42,14 +42,21 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(LoadCutsceneThenLevel(7, 3)); // Load Cutscene 2 before Level 2
     }
 
+    public void LoadCutsceneAfterLevelOne()
+    {
+        StartCoroutine(LoadLevel(7)); // Transitions to Cutscene after Level 1
+    }
+
     public void SkipCutscene()
     {
-        StartCoroutine(LoadLevel(2));
+        StartCoroutine(LoadLevel(2)); // Skips Cutscene 1 → Loads Level 1
     }
+
     public void SkipCutscene2()
     {
-        StartCoroutine(LoadLevel(5));
+        StartCoroutine(LoadLevel(3)); // Skips Cutscene 2 → Loads Level 2
     }
+
     public void LoadLoseScene()
     {
         StartCoroutine(LoadLevel(4));
@@ -57,7 +64,7 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadWinScene()
     {
-        StartCoroutine(LoadCutsceneThenLevel(8, 5)); // Load Final Cutscene before Win Screen
+        StartCoroutine(LoadLevel(5)); // Leaves LoadWinScene unchanged
     }
 
     public void ExitGame()
