@@ -97,7 +97,8 @@ public class MovementController : MonoBehaviour
 
         if (other.gameObject.CompareTag("LevelOneGate"))
         {
-            SceneManager.LoadScene(5);
+            //SceneManager.LoadScene(5);
+            levelLoader.LoadLevelTwo();
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
