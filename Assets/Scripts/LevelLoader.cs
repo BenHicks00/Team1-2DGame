@@ -42,6 +42,14 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(LoadCutsceneThenLevel(7, 3)); // Load Cutscene 2 before Level 2
     }
 
+    public void SkipCutscene()
+    {
+        StartCoroutine(LoadLevel(2));
+    }
+    public void SkipCutscene2()
+    {
+        StartCoroutine(LoadLevel(5));
+    }
     public void LoadLoseScene()
     {
         StartCoroutine(LoadLevel(4));

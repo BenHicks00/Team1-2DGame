@@ -59,7 +59,7 @@ public class MovementController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.RightBracket))
         {
-            levelLoader.LoadLevelTwo();
+            levelLoader.SkipCutscene2();
         }
 
         hp.SetHealth(Health);
