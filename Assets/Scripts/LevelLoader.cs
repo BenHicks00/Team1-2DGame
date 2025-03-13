@@ -34,10 +34,14 @@ public class LevelLoader : MonoBehaviour
         // Load Cutscene (Scene Index 6) before Level 1 (Scene Index 2)
         StartCoroutine(LoadCutsceneThenLevel(6, 2));
     }
+    public void SkipCutscene()
+    {
+        StartCoroutine(LoadLevel(2));
+    }
 
     public void LoadLevelTwo()
     {
-        StartCoroutine(LoadLevel(3));
+        StartCoroutine(LoadLevel(5));
     }
 
     public void LoadLoseScene()
