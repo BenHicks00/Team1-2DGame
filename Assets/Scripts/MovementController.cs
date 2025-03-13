@@ -88,8 +88,6 @@ public class MovementController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //This event/function handles trigger events (collsion between a game object with a rigid body)
-
         if (other.gameObject.CompareTag("DeathBox"))
         {
             SceneManager.LoadScene(4);
@@ -97,27 +95,28 @@ public class MovementController : MonoBehaviour
 
         if (other.gameObject.CompareTag("LevelOneGate"))
         {
-            //SceneManager.LoadScene(5);
-            levelLoader.LoadLevelTwo();
+            Debug.Log("Player reached LevelOneGate! Loading cutscene...");
+            levelLoader.LoadCutsceneAfterLevelOne(); // This should load Scene 7 (Cutscene 2)
         }
+
         if (other.gameObject.CompareTag("Enemy"))
         {
             Health = Health - 10;
         }
+
         if (other.gameObject.CompareTag("Boss"))
         {
             Health = Health - 10;
         }
+
         if (other.gameObject.CompareTag("BossTrigger"))
         {
-            //PLAY ANIMATION/VIDEO
-
-            //LOCK CAMERA TO ARENA
-            //PLAY BOSS ANIMATION
-            //CLOSE DOOR BEHIND PLAYER
+            // PLAY ANIMATION/VIDEO
+            // LOCK CAMERA TO ARENA
+            // PLAY BOSS ANIMATION
+            // CLOSE DOOR BEHIND PLAYER
             cameraController.LockCamera(new Vector3(110, 30, -10));
             BossAnimator.SetTrigger("BossTrigger");
-            
         }
     }
 }

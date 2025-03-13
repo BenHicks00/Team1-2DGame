@@ -44,7 +44,8 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadCutsceneAfterLevelOne()
     {
-        StartCoroutine(LoadLevel(7)); // Transitions to Cutscene after Level 1
+        Debug.Log("Loading Cutscene after Level 1 (Scene 7)...");
+        StartCoroutine(LoadLevel(7)); // Ensure Scene 7 (Cutscene 2) is loaded
     }
 
     public void SkipCutscene()
@@ -90,11 +91,10 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(WaitForVideoToEnd(levelIndex));
     }
 
-    IEnumerator WaitForVideoToEnd(int nextLevel = 2) // Default to Level 1 if not specified
+    IEnumerator WaitForVideoToEnd(int nextLevel = 2) // Default changed to prevent errors
     {
         yield return new WaitForSeconds(1f);
 
-        // Find the VideoPlayer in the current scene
         VideoPlayer videoPlayer = FindObjectOfType<VideoPlayer>();
 
         if (videoPlayer != null)
@@ -104,12 +104,21 @@ public class LevelLoader : MonoBehaviour
 
             while (videoPlayer.isPlaying)
             {
-                yield return null; // Wait one frame
+                yield return null; // Wait until the video finishes
             }
 
             Debug.Log($"Cutscene finished! Loading Scene {nextLevel}...");
             isCutscenePlaying = false;
-            StartCoroutine(LoadLevel(nextLevel));
+
+            // If Scene 7 (Cutscene 2) is playing, transition to Scene 5 (Level 2)
+            if (SceneManager.GetActiveScene().buildIndex == 7)
+            {
+                StartCoroutine(LoadLevel(5)); // Ensure Scene 7 → Scene 5
+            }
+            else
+            {
+                StartCoroutine(LoadLevel(nextLevel));
+            }
         }
         else
         {
