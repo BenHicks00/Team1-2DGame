@@ -96737,6 +96737,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 457062133}
     - target: {fileID: 673133437755884698, guid: 4ecf2c4547fe9684eba1277cbef6c1e4, type: 3}
+      propertyPath: levelLoader
+      value: 
+      objectReference: {fileID: 1411726153}
+    - target: {fileID: 673133437755884698, guid: 4ecf2c4547fe9684eba1277cbef6c1e4, type: 3}
       propertyPath: BossAnimator
       value: 
       objectReference: {fileID: 1420409594}

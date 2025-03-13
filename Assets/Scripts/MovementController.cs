@@ -28,6 +28,7 @@ public class MovementController : MonoBehaviour
     public Animator BossAnimator;
 
     public CameraController cameraController;
+    public LevelLoader levelLoader;
 
 
 
@@ -51,6 +52,14 @@ public class MovementController : MonoBehaviour
         if(Health <= 0)
         {
             SceneManager.LoadScene(4);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftBracket))
+        {
+            levelLoader.SkipCutscene();
+        }
+        if (Input.GetKeyDown(KeyCode.RightBracket))
+        {
+            levelLoader.LoadLevelTwo();
         }
 
         hp.SetHealth(Health);
