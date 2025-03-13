@@ -12,8 +12,11 @@ public class LevelLoader : MonoBehaviour
     private void Start()
     {
         Debug.Log("LevelLoader script is running in this scene.");
-        
-        if (SceneManager.GetActiveScene().buildIndex == 6) // Ensure this runs in Cutscene Scene
+
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        // If the current scene is a cutscene, start waiting for the video to end
+        if (currentSceneIndex == 6 || currentSceneIndex == 7 || currentSceneIndex == 8)
         {
             StartCoroutine(WaitForVideoToEnd());
         }
@@ -31,17 +34,12 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadLevelOne()
     {
-        // Load Cutscene (Scene Index 6) before Level 1 (Scene Index 2)
-        StartCoroutine(LoadCutsceneThenLevel(6, 2));
-    }
-    public void SkipCutscene()
-    {
-        StartCoroutine(LoadLevel(2));
+        StartCoroutine(LoadCutsceneThenLevel(6, 2)); // Load Cutscene 1 before Level 1
     }
 
     public void LoadLevelTwo()
     {
-        StartCoroutine(LoadLevel(5));
+        StartCoroutine(LoadCutsceneThenLevel(7, 3)); // Load Cutscene 2 before Level 2
     }
 
     public void LoadLoseScene()
@@ -51,7 +49,7 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadWinScene()
     {
-        StartCoroutine(LoadLevel(3));
+        StartCoroutine(LoadCutsceneThenLevel(8, 5)); // Load Final Cutscene before Win Screen
     }
 
     public void ExitGame()
@@ -74,10 +72,10 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         Debug.Log("Waiting for video to finish...");
-        StartCoroutine(WaitForVideoToEnd());
+        StartCoroutine(WaitForVideoToEnd(levelIndex));
     }
 
-    IEnumerator WaitForVideoToEnd()
+    IEnumerator WaitForVideoToEnd(int nextLevel = 2) // Default to Level 1 if not specified
     {
         yield return new WaitForSeconds(1f);
 
@@ -94,14 +92,14 @@ public class LevelLoader : MonoBehaviour
                 yield return null; // Wait one frame
             }
 
-            Debug.Log("Cutscene finished! Loading Level 1...");
+            Debug.Log($"Cutscene finished! Loading Scene {nextLevel}...");
             isCutscenePlaying = false;
-            StartCoroutine(LoadLevel(2)); // Load Level 1 (Scene 2)
+            StartCoroutine(LoadLevel(nextLevel));
         }
         else
         {
-            Debug.LogWarning("No VideoPlayer found! Loading Level 1 immediately.");
-            StartCoroutine(LoadLevel(2));
+            Debug.LogWarning("No VideoPlayer found! Loading next level immediately.");
+            StartCoroutine(LoadLevel(nextLevel));
         }
     }
 }
